@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+## HelloLLVM 5月线下聚会
 
-You can use the [editor on GitHub](https://github.com/hellollvm/website/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Hi all
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+HelloLLVM是一群LLVM的从业者自发组织的一个开源组织，我们的目标是为中国大陆的LLVM相关的工具链开发人员提供交流的机会。
+HelloGCC是我们的兄弟组织。实际上，两个组织的创始人是重叠的 :-)
 
-### Markdown
+我们计划每个月组织一次线下聚会，目前估计规模在10-15人左右（以后可能更多），北京上海杭州深圳广州轮流举办。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 五月19日周六下午2点北京
 
-```markdown
-Syntax highlighted code block
+地点在北京市中关村南四街四号软件研究所5号楼4层第二会议室。
 
-# Header 1
-## Header 2
-### Header 3
+时间是5月19日下午2点到6点（这个时间段都可以来参加）。
 
-- Bulleted
-- List
+从地铁知春路口（13号线A口）出来后西北方向走300米左右就到了。
 
-1. Numbered
-2. List
+地图可以参考：http://www.is.cas.cn/yjsgk2016/lxwm2016/
 
-**Bold** and _Italic_ and `Code` text
+### 赞助商
 
-[Link](url) and ![Image](src)
-```
+感谢「中国科学院软件研究所协同软件中心」提供场地支持。
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hellollvm/website/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+经费来源主要是「中科重德智能科技有限公司」赞助，感谢 (^o^)/
