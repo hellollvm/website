@@ -1,3 +1,19 @@
+## LLVM/GCC 开发者南京聚会：1月19日周六下午
+
+LLVM/GCC social in Nanjing China: Jan 19, 2019
+
+Hi all,
+
+The 5th LLVM/GCC social in Nanjing will happen on Jan 19, 2019.
+
+Everyone interested in LLVM/GCC/Toolchain/IDE related projects is
+invited to join.
+Event details is at https://mp.weixin.qq.com/s/7jupkPiRrlxjYEuglMbvFA
+
+BoF style. Presentations are welcome :-)
+
+Looking forward to meet you !
+
 ## LLVM开发者深圳聚会：10月20日周六全天（与南方程序分析分享日合办）
 
 ### HelloLLVM开发者线下聚会深圳站时间确定，终于能见面啦
