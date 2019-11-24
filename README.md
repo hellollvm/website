@@ -1,11 +1,15 @@
 ## 11月23日上海线下聚会通知
 
+[live streaming](https://live.bilibili.com/h5/10339607)
+
+[video playback](https://space.bilibili.com/296494084/video)
+
 上海的小伙伴们久等啦，下一场 HelloGCC & HelloLLVM 开发者线下聚会定于11月23日周六下午2点到5点，上海传奇广场vπ咖啡报告厅（还是老地方，虽然里面的咖啡已经变成Luckin了）靠近地铁张江高科站。
 
 目前有1个邀请报告和2个技术分享。欢迎提前或现场报名，分享自己的工作或感受。
 
-- 邀请报告：GCC/AArch64性能分析与优化
-- 技术分享：上手ollvm第一步：Porting
+- 邀请报告：GCC/AArch64性能分析与优化 [slides](slides/ampere-arm-gcc-v3.pdf)
+- 技术分享：上手ollvm第一步：Porting [slides](slides/porting-ollvm.pdf)
 - 闪电分享：欢迎现场报名
 
 **GCC/AArch64性能分析与优化**
