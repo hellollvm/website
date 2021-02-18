@@ -450,6 +450,43 @@ TBD
 微信公众号：hellogcc2007
 
 
+# OSDT Monthly Meetup 2020-11-22
+
+本月为线上聚会。
+
+视频回看链接：
+https://www.bilibili.com/video/BV1A54y1k7q3
+
+## 活动时间和地点
+
+- 2020年11月22日 周日上午 10:00 - 11:30 （北京时间）
+- 2020年11月21日 周六晚上 18:00 - 19:30 PST/PDT
+- 地点：Zoom
+
+## 活动议程
+
+- 陈嘉炜 - 《RISC-V Zfinx 扩展在 GNU 工具链上的实现：进展报告》
+- MaskRay - TBD（近期工作）
+- 自由讨论
+
+## 直播观看
+
+https://live.bilibili.com/10339607
+
+不需要报名，直接看。如果有B站账号，登陆之后可以进行弹幕提问。
+
+## 通过 Zoom 参加
+
+联系OSDT社区负责人吴伟报名（微信报名标注【OSDT】）或通过 lazyparser at gmail.com 后台留言。
+
+## 演讲报名
+
+欢迎报名演讲，请联系OSDT社区负责人吴伟报名（微信报名标注【OSDT】）或通过 lazyparser at gmail.com 后台留言。
+
+![](https://github.com/hellogcc/osdt-weekly/blob/master/images/hellogcc-wuwei.jpeg)
+
+https://github.com/hellogcc/osdt-weekly/blob/master/images/hellogcc-wuwei.jpeg
+
 # OSDT Hangzhou Meetup 2020-10-24
 
 我们终于恢复了线下聚会了。本次活动地点杭州，依然是围绕开源开发工具的交流，包括基于GCC/LLVM/QEMU等开源系统做的二次开发工作。尤其欢迎 RISC-V 的软硬件开源爱好者、开源 EDA 工具的从业者分享自己的经验。
