@@ -1,3 +1,13 @@
+# 请访问和订阅 HelloGCC.org
+
+HelloLLVM.org 用于我们（OSDT社区）的线下聚会通知。2019年开始，HelloLLVM社区与OSDT社区（原先的HelloGCC社区）合并。
+
+每年的 OSDT 大会将会在 HelloGCC.org 上发布通知。
+
+https://hellogcc.org
+
+https://github.com/hellogcc
+
 # OSDT Monthly Meetup 2021-02-21
 
 本次依然是线上会议形式。
