@@ -8,6 +8,14 @@ https://hellogcc.org
 
 https://github.com/hellogcc
 
+# 第13届开源开发工具大会开始征稿啦！
+
+https://github.com/hellogcc/hellogcc.github.io/blob/main/blog/2021-10-19-CFP-OSDT-Conf-2021.md
+
+# OSDT社区10月聚会： 玄铁C910开源对RISC-V社区的影响、 Chisel 进展等
+
+https://github.com/hellogcc/osdt-weekly/blob/master/events/2021-10-24-OSDT-Meetup.md
+
 # OSDT Monthly Meetup 2021-02-21
 
 本次依然是线上会议形式。
