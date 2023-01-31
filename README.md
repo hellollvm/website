@@ -25,8 +25,7 @@ HelloLLVM 将从2023年2月开始，用10个月的时间，在10座不同的城�
 
 ### 如果您想要分享，请和我们联系：
 
-- 发送邮件至 `lazyparser@gmail.com` （标题为 `[hellollvm] 演讲报名：题目`）
-- 直接加微信 `fangzhang1024` （添加时请备注【`姓名+hellollvm`】加速验证通过）
+- 发送邮件至 `qiuji.odyssey@gmail.com` （标题为 `[hellollvm] 演讲报名：题目`）
 
 ### 赞助征集
 
@@ -34,8 +33,7 @@ HelloLLVM 将从2023年2月开始，用10个月的时间，在10座不同的城�
 
 如果贵公司有意提供赞助，欢迎和我们联系：  
 
-`"吴伟 <lazyparser@gmail.com> "`
-（或微信号 `fangzhang1024`）
+`"邱吉 <qiuji.odyssey@gmail.com> "`
 
 ### 关注公众号获取大会后续信息
 
