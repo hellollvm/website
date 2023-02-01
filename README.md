@@ -1,3 +1,11 @@
+# Welcome Ji Qiu, our new chair of HelloLLVM Community
+
+Hi  all,
+
+从2023年2月1日开始，邱吉（qjivy） 将接替吴伟（lazyparser），成为 HelloLLVM 社区的负责人（chair）。吴伟将继续活跃在 HelloGCC、 HelloLLVM 社区中，继续会为大家服务。
+
+让我们拿出珍藏的表情包，祝福 HelloLLVM 第二任 Chair 的诞生🎉
+
 # 2月25日武汉，HelloLLVM 线下聚会重启！技术分享征集中
 
 终于，我们重新可以放心大胆地在线下聚会了。
