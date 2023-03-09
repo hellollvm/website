@@ -1298,7 +1298,7 @@ The schedule for the fourth offline meeting of HelloLLVM/HelloGCC developers has
 这次特地选择跟9月15日由源伞科技和港科大、南科大举办的首届「南方程序分析日」同一个周末举办，方便外地来参加的朋友合并行程。程序分析的专题讨论在目前国内凤毛麟角，值得参加。对程序分析感兴趣的朋友可以[点击这里](https://mp.weixin.qq.com/s/MArvhbimzwCQxCoBfzBSZA)查看15日周六的日程。
 This time, it was specially chosen to be held on the same weekend as the first "Southern Program Analysis Day" held by Yuansan Technology, Hong Kong University of Science and Technology, and SUSTech on September 15, so that it is convenient for friends from other places to join the trip. Discussions on program analysis are currently rare in China and are worth participating in. Friends who are interested in program analysis can [click here](https://mp.weixin.qq.com/s/MArvhbimzwCQxCoBfzBSZA) to view the schedule on Saturday the 15th.
 
-![深圳很多人咖啡地址](shenzhen-henduorencaffe.png)
+![深圳很多人咖啡地址](images/shenzhen-henduorencaffe.png)
 
 ++++ 以下是 20180906 之前的信息 ++++
 ++++ The following is the information before 20180906 ++++
@@ -1400,7 +1400,7 @@ After exiting from Metro Zhichun Intersection (Exit B of Line 13), you will see 
 地图:
 map
 
-![厦门大厦地址](xiamendasha.jpg)
+![厦门大厦地址](images/xiamendasha.jpg)
 
 ### 活动形式 (Activity form)
 
@@ -1424,4 +1424,4 @@ Thanks to the "Intelligent Software Research Center, Institute of Software, Chin
 经费来源主要是「中科重德智能科技有限公司」赞助，感谢 (^o^)/
 The funding source is mainly sponsored by "Zhongke Zhongde Intelligent Technology Co., Ltd.", thanks (^o^)/
 
-![HelloGCC微信公众号](qrcode.jpg)
+![HelloGCC微信公众号](images/qrcode.jpg)
