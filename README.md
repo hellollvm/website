@@ -2,6 +2,8 @@
 
 - [6月15日3PM，来聊聊首届AsiaLLVM开发者大会的见闻感受(线上腾讯会议)](https://mp.weixin.qq.com/s/4mR8IxlxFlB3VNzLGJGS1w)
 
+视频回放 [已经上传到了B站：BV1FpMtzDEeB](https://www.bilibili.com/video/BV1FpMtzDEeB/).
+
 # HelloLLVM社区3月技术交流会通知
 
 HelloLLVM社区是由多位编译器从业者共同发起的编译技术社区，面向个人开发者及爱好者，话题围绕LLVM编译框架、MLIR、编译技术理论、开源社区八卦吐槽等展开。自2018年创立以来，举办过多场线下交流活动。自2023年2月开始，邱吉博士担任HelloLLVM社区负责人，负责社区的日常活动组织。
