@@ -1,3 +1,7 @@
+# HelloLLVM 社区（OSDT社区的一部分）
+
+[久违了：开源开发者Meetup计划于8月30日3PM举行](https://hellogcc.github.io/2026/2026-08-30-OSDT-Meetup.html)
+
 # 参会感受交流会：首届 AsiaLLVM，都聊了啥
 
 - [6月15日3PM，来聊聊首届AsiaLLVM开发者大会的见闻感受(线上腾讯会议)](https://mp.weixin.qq.com/s/4mR8IxlxFlB3VNzLGJGS1w)
