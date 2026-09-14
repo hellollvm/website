@@ -1,4 +1,8 @@
-# HelloLLVM社区推出南盘江计划，助力女性编译器工程师实现职业提升
+---
+title: "HelloLLVM社区推出南盘江计划，助力女性编译器工程师实现职业提升"
+date: 2023-04-19
+slug: "nanpanjiang-project-announcement"
+---
 
 HelloLLVM社区成立于2018年5月，原HelloGCC社区中从事LLVM研究和开发工作的技术爱好者组成了新的线下社交群体。机缘巧合的是，在同年8月，在湾区的LLVM开发者大会上，LLVM基金会宣布了第一届「Women in Compilers and Tools Workshop」。在官宣博客[1]中，LLVM基金会 Tanya Lattner 介绍了举办 WiCT Workshop 的目标：
 

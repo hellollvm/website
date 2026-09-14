@@ -33,5 +33,5 @@ summaryLength = 28
   [[menu.main]]
     identifier = "archives"
     name = "历史存档"
-    pageRef = "/archives.md"
+    pageRef = "/archives"
     weight = 4
