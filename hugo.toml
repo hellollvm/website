@@ -18,7 +18,7 @@ summaryLength = 28
   [[menu.main]]
     identifier = "home"
     name = "首页"
-    pageRef = "/"
+    url = "/"
     weight = 1
   [[menu.main]]
     identifier = "posts"
@@ -33,5 +33,5 @@ summaryLength = 28
   [[menu.main]]
     identifier = "archives"
     name = "历史存档"
-    pageRef = "/archives"
+    pageRef = "/archives.md"
     weight = 4
