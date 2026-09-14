@@ -23,10 +23,16 @@ body {
 
 .header {
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-  background: rgba(5, 11, 25, 0.72);
+  background: rgba(5, 11, 25, 0.92);
   position: sticky;
   top: 0;
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .header {
+    backdrop-filter: blur(8px);
+    background: rgba(5, 11, 25, 0.72);
+  }
 }
 
 .brand {
