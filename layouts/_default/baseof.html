@@ -14,7 +14,7 @@
       <div class="wrap">
         <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
         <p class="tagline">{{ .Site.Params.tagline }}</p>
-        <nav>
+        <nav aria-label="Main navigation">
           {{ range .Site.Menus.main }}
             <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a>
           {{ end }}
