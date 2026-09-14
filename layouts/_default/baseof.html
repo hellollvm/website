@@ -16,7 +16,7 @@
         <p class="tagline">{{ .Site.Params.tagline }}</p>
         <nav>
           {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a>
           {{ end }}
         </nav>
       </div>
