@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+    {{ with resources.Get "css/main.css" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" />
+    {{ end }}
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrap">
+        <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+        <p class="tagline">{{ .Site.Params.tagline }}</p>
+        <nav>
+          {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer class="footer wrap">© {{ now.Year }} HelloLLVM</footer>
+  </body>
+</html>
