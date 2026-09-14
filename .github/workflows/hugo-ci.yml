@@ -2,7 +2,7 @@ name: Hugo CI
 
 on:
   push:
-    branches: ["**"]
+    branches: ["main", "master"]
   pull_request:
 
 permissions:
