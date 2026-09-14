@@ -1,0 +1,37 @@
+baseURL = "https://hellollvm.org/"
+languageCode = "zh-cn"
+title = "HelloLLVM 社区"
+defaultContentLanguage = "zh"
+summaryLength = 28
+
+[params]
+  description = "HelloLLVM 社区技术活动与博客"
+  tagline = "Compiler · LLVM · MLIR · Open Source"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "posts"
+    name = "博客"
+    pageRef = "/posts"
+    weight = 2
+  [[menu.main]]
+    identifier = "meetups"
+    name = "Meetups"
+    pageRef = "/meetups"
+    weight = 3
+  [[menu.main]]
+    identifier = "archives"
+    name = "历史存档"
+    pageRef = "/archives"
+    weight = 4

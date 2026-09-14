@@ -1,0 +1,90 @@
+:root {
+  --bg: #050b19;
+  --bg-soft: #0d1730;
+  --text: #d9e6ff;
+  --muted: #8ea4d3;
+  --primary: #5ab0ff;
+  --line: #1c2e5d;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #132956 0%, var(--bg) 42%);
+  line-height: 1.7;
+}
+
+.wrap {
+  width: min(960px, 92%);
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 11, 25, 0.92);
+  position: sticky;
+  top: 0;
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .header {
+    backdrop-filter: blur(8px);
+    background: rgba(5, 11, 25, 0.72);
+  }
+}
+
+.brand {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.tagline { margin: .35rem 0 .8rem; color: var(--muted); }
+
+nav { display: flex; gap: 1rem; flex-wrap: wrap; padding-bottom: .9rem; }
+nav a { color: var(--primary); text-decoration: none; }
+
+.cards { display: grid; gap: 1rem; margin-top: 1.25rem; }
+.card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, rgba(17, 34, 69, 0.8), rgba(13, 23, 48, 0.8));
+}
+
+h1, h2, h3 { line-height: 1.3; }
+h1 { margin-top: 1.5rem; }
+
+a { color: var(--primary); }
+.meta { color: var(--muted); font-size: .92rem; margin-top: -.35rem; }
+.more { text-decoration: none; }
+.intro p:first-child { margin-top: 0; }
+
+.post {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  background: rgba(9, 18, 38, 0.8);
+}
+
+.footer { color: var(--muted); margin: 2rem auto 2.5rem; font-size: .9rem; }
+
+code { background: #0f1d3d; padding: .12rem .3rem; border-radius: .3rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
