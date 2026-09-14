@@ -7,4 +7,4 @@ tags: ["community", "announcement"]
 
 HelloLLVM社区推出南盘江计划，助力女性编译器工程师实现职业提升。
 
-详情请点击 [这里](/announcements/nanpanjiang-project-announcement/)。
+详情请点击 [这里]({{< relref "/announcements/nanpanjiang-project-announcement.md" >}})。
