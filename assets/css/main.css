@@ -76,3 +76,15 @@ a { color: var(--primary); }
 .footer { color: var(--muted); margin: 2rem auto 2.5rem; font-size: .9rem; }
 
 code { background: #0f1d3d; padding: .12rem .3rem; border-radius: .3rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

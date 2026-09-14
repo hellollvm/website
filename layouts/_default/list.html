@@ -8,7 +8,7 @@
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           <p class="meta">{{ .Date.Format "2006-01-02" }}</p>
           <p>{{ .Summary }}</p>
-          <a class="more" href="{{ .RelPermalink }}" aria-label="Read: {{ .Title }}">阅读全文 →</a>
+          <a class="more" href="{{ .RelPermalink }}">阅读全文<span class="sr-only">：{{ .Title }}</span> →</a>
         </article>
       {{ end }}
     </div>
