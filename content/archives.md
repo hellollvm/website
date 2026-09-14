@@ -1,3 +1,8 @@
+---
+title: "历史存档"
+slug: "archives"
+---
+
 # 请访问和订阅 HelloGCC.org
 
 HelloLLVM.org 用于我们（OSDT社区）的线下聚会通知。2019年开始，HelloLLVM社区与OSDT社区（原先的HelloGCC社区）合并。
