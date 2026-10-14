@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© {{ now.Year }} {{ .Site.Title }} · 由社区志愿者维护</span>
+      {{ with .Site.Params.repoURL }}<a href="{{ . }}" rel="noopener">网站源码</a>{{ end }}
+    </div>
+    {{/* Friend links to sibling OSDT / RISC-V China community sites. Delete this block if unwanted. */}}
+    {{ with .Site.Params.friendLinks }}
+    <div class="footer-row">
+      <span class="footer-label">社区友链</span>
+      {{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</footer>

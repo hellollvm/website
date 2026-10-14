@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand-mark" aria-hidden="true">LLVM</span>
+      <span>
+        {{ .Site.Title }}
+        {{ with .Site.Params.tagline }}<span class="brand-tagline">{{ . }}</span>{{ end }}
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      {{ $current := . }}
+      {{ range .Site.Menus.main }}
+        {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+        <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL }}{{ end }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      {{ with .Site.Params.repoURL }}
+        <a class="icon-link" href="{{ . }}" title="GitHub" rel="noopener">
+          {{ partial "icon.html" "github" }}<span class="sr-only">GitHub</span>
+        </a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,58 @@
+{{ define "main" }}
+  <section class="hero">
+    <span class="hero-kicker">{{ .Site.Params.tagline }}</span>
+    <h1>{{ .Title }}</h1>
+    <div class="hero-lead">{{ .Content }}</div>
+    <div class="hero-actions">
+      {{ with .Site.GetPage "/posts" }}<a class="button button-primary" href="{{ .RelPermalink }}">阅读博客</a>{{ end }}
+      {{ with .Site.GetPage "/meetups" }}<a class="button" href="{{ .RelPermalink }}">查看 Meetups</a>{{ end }}
+      {{ with .Site.Params.repoURL }}<a class="button" href="{{ . }}" rel="noopener">{{ partial "icon.html" "github" }} GitHub</a>{{ end }}
+    </div>
+  </section>
+
+  {{/* Section entry cards: every top-level section plus the legacy archive page. */}}
+  <section class="section" aria-labelledby="sections-title">
+    <div class="section-head"><h2 id="sections-title">栏目</h2></div>
+    <ul class="cards">
+      {{ range .Site.Sections }}
+        <li class="card card-section">
+          <span class="card-icon">{{ partial "icon.html" .Section }}</span>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Description }}<p>{{ . }}</p>{{ else }}{{ with .Content }}<p>{{ . | plainify | truncate 80 }}</p>{{ end }}{{ end }}
+          <span class="card-count">{{ len .RegularPages }} 篇</span>
+        </li>
+      {{ end }}
+      {{ with .Site.GetPage "/archives" }}
+        <li class="card card-section">
+          <span class="card-icon">{{ partial "icon.html" "archive" }}</span>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 80 }}{{ end }}</p>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{/* Latest regular pages across all sections. */}}
+  {{ $latest := first 6 (where .Site.RegularPages "Section" "ne" "") }}
+  {{ with $latest }}
+  <section class="section" aria-labelledby="latest-title">
+    <div class="section-head">
+      <h2 id="latest-title">最新动态</h2>
+      {{ with $.Site.GetPage "/posts" }}<a href="{{ .RelPermalink }}">全部文章 →</a>{{ end }}
+    </div>
+    <ul class="cards">
+      {{ range . }}
+        <li class="card">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <span class="meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            {{ with .Site.GetPage (printf "/%s" .Section) }}<span class="tag">{{ .Title }}</span>{{ end }}
+          </span>
+          <p>{{ .Summary | plainify | truncate 110 }}</p>
+          <a class="more" href="{{ .RelPermalink }}">阅读全文<span class="sr-only">：{{ .Title }}</span><span aria-hidden="true"> →</span></a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}

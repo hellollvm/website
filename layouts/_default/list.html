@@ -1,16 +1,20 @@
 {{ define "main" }}
-  <section>
+  <header class="page-head">
     <h1>{{ .Title }}</h1>
     {{ with .Content }}<div class="intro">{{ . }}</div>{{ end }}
-    <div class="cards">
+  </header>
+  <section class="section">
+    <ul class="cards">
       {{ range .Pages.ByDate.Reverse }}
-        <article class="card">
+        <li class="card">
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p class="meta">{{ .Date.Format "2006-01-02" }}</p>
-          <p>{{ .Summary }}</p>
+          {{ if not .Date.IsZero }}
+            <span class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
+          {{ end }}
+          <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}</p>
           <a class="more" href="{{ .RelPermalink }}">阅读全文<span class="sr-only">：{{ .Title }}</span><span aria-hidden="true"> →</span></a>
-        </article>
+        </li>
       {{ end }}
-    </div>
+    </ul>
   </section>
 {{ end }}

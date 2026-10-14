@@ -1,7 +1,16 @@
 {{ define "main" }}
   <article class="post">
-    <h1>{{ .Title }}</h1>
-    <p class="meta">{{ .Date.Format "2006-01-02" }}</p>
+    <header class="post-head">
+      <h1>{{ .Title }}</h1>
+      <span class="meta">
+        {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>{{ end }}
+        {{ with .Site.GetPage (printf "/%s" .Section) }}<a class="tag" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+      </span>
+    </header>
     <div class="post-content">{{ .Content }}</div>
+    <footer class="post-footer">
+      {{ with .Site.GetPage (printf "/%s" .Section) }}<a href="{{ .RelPermalink }}">← 返回{{ .Title }}</a>{{ end }}
+    </footer>
   </article>
 {{ end }}

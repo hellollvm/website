@@ -1,6 +1,8 @@
 ---
 title: "历史存档"
 slug: "archives"
+date: 2021-10-24
+description: "2021 年及以前的旧版站点内容存档：OSDT 社区线下聚会通知与公告。"
 ---
 
 # 请访问和订阅 HelloGCC.org

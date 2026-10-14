@@ -2,11 +2,30 @@ baseURL = "https://hellollvm.org/"
 languageCode = "zh-cn"
 title = "HelloLLVM 社区"
 defaultContentLanguage = "zh"
-summaryLength = 28
+summaryLength = 60
+hasCJKLanguage = true
 
 [params]
   description = "HelloLLVM 社区技术活动与博客"
   tagline = "Compiler · LLVM · MLIR · Open Source"
+  repoURL = "https://github.com/hellollvm/website"
+
+# Friend links shown in the footer. Remove the block to hide the row.
+[[params.friendLinks]]
+  name = "HelloGCC / OSDT"
+  url = "https://hellogcc.org"
+[[params.friendLinks]]
+  name = "CNRV"
+  url = "https://cnrv.io"
+[[params.friendLinks]]
+  name = "甲辰计划"
+  url = "https://rv2036.org"
+[[params.friendLinks]]
+  name = "松竹梅计划"
+  url = "https://songzhumei-project.org"
+[[params.friendLinks]]
+  name = "PLCT Lab"
+  url = "https://plctlab.github.io"
 
 [taxonomies]
   tag = "tags"
