@@ -1,0 +1,86 @@
+- id: site_title
+  translation: "HelloLLVM Community"
+- id: nav_home
+  translation: "Home"
+- id: lang_switch_label
+  translation: "切换到中文"
+- id: lang_switch_name
+  translation: "中文"
+- id: theme_toggle
+  translation: "Toggle light / dark theme"
+- id: hero_kicker
+  translation: "Open Source · Compilers · Community"
+- id: hero_title_a
+  translation: "Hello, "
+- id: hero_title_b
+  translation: "Compiler World"
+- id: hero_cta_activities
+  translation: "Recent activities"
+- id: hero_cta_blog
+  translation: "Browse the blog"
+- id: recent_activities
+  translation: "Recent Activities"
+- id: recent_activities_sub
+  translation: "Meetups, tech talks, conferences and community announcements"
+- id: latest_posts
+  translation: "Latest Posts"
+- id: latest_posts_sub
+  translation: "Blog posts and notes from the community"
+- id: all_posts
+  translation: "All posts"
+- id: all_meetups
+  translation: "All meetups"
+- id: about_title
+  translation: "About Us"
+- id: join_title
+  translation: "Join Us"
+- id: read_more
+  translation: "Read more"
+- id: view_details
+  translation: "View details"
+- id: published
+  translation: "Published on"
+- id: tags_label
+  translation: "Tags"
+- id: back_home
+  translation: "Back to home"
+- id: back_section
+  translation: "Back to list"
+- id: minutes_read
+  translation: "min read"
+- id: meta_date
+  translation: "Date"
+- id: meta_city
+  translation: "City"
+- id: meta_format
+  translation: "Format"
+- id: meta_venue
+  translation: "Venue"
+- id: meta_links
+  translation: "Links"
+- id: label_meetup
+  translation: "Meetup"
+- id: label_post
+  translation: "Blog"
+- id: label_announcement
+  translation: "News"
+- id: label_archives
+  translation: "Archives"
+- id: stat_since
+  translation: "Founded"
+- id: stat_cities
+  translation: "Cities"
+- id: stat_talks
+  translation: "Tech talks"
+- id: stat_community
+  translation: "Partner communities"
+- id: footer_rights
+  translation: "All rights reserved"
+- id: footer_note
+  translation: "Built with ♥ and Markdown · Powered by Hugo"
+- id: archives_intro
+  translation: "Historical archive of HelloLLVM.org events. For the annual OSDT conference, please visit HelloGCC.org."
+- id: contact_label
+  translation: "Contact"
+- id: subscribe_label
+  translation: "Subscribe & Follow"

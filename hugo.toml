@@ -1,12 +1,8 @@
 baseURL = "https://hellollvm.org/"
-languageCode = "zh-cn"
 title = "HelloLLVM 社区"
 defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
 summaryLength = 28
-
-[params]
-  description = "HelloLLVM 社区技术活动与博客"
-  tagline = "Compiler · LLVM · MLIR · Open Source"
 
 [taxonomies]
   tag = "tags"
@@ -14,24 +10,68 @@ summaryLength = 28
 [permalinks]
   posts = "/posts/:slug/"
 
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "首页"
-    url = "/"
+[languages]
+  [languages.zh]
+    languageCode = "zh-cn"
+    languageName = "中文"
+    title = "HelloLLVM 社区"
+    contentDir = "content/zh"
     weight = 1
-  [[menu.main]]
-    identifier = "posts"
-    name = "博客"
-    pageRef = "/posts"
+    [languages.zh.params]
+      description = "HelloLLVM 社区技术活动与博客"
+      tagline = "编译器 · LLVM · MLIR · 开源"
+      homeIntro = "HelloLLVM 是一个面向编译器开发者与爱好者的开源技术社区。我们在线下与线上举办 Meetup、技术分享与培训，围绕 LLVM、MLIR、GCC、RISC-V 等话题一起交流成长。"
+      aboutText = "HelloLLVM 社区成立于 2018 年 5 月，由原 HelloGCC 社区中从事 LLVM 研究和开发的技术爱好者组成。2019 年起与 OSDT 社区（原 HelloGCC 社区）合并，共同运营 HelloGCC.org 与 HelloLLVM.org。自 2023 年 2 月起，邱吉博士担任社区负责人。"
+      joinText = "欢迎参加我们的线下 Meetup、订阅邮件列表，或在 GitHub 上关注我们。无论你是编译器老兵还是刚入门的新朋友，都欢迎来聊聊。"
+    [[languages.zh.menu.main]]
+      identifier = "home"
+      name = "首页"
+      url = "/"
+      weight = 1
+    [[languages.zh.menu.main]]
+      identifier = "posts"
+      name = "博客"
+      pageRef = "/posts"
+      weight = 2
+    [[languages.zh.menu.main]]
+      identifier = "meetups"
+      name = "活动"
+      pageRef = "/meetups"
+      weight = 3
+    [[languages.zh.menu.main]]
+      identifier = "archives"
+      name = "历史存档"
+      pageRef = "/archives"
+      weight = 4
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    title = "HelloLLVM Community"
+    contentDir = "content/en"
     weight = 2
-  [[menu.main]]
-    identifier = "meetups"
-    name = "Meetups"
-    pageRef = "/meetups"
-    weight = 3
-  [[menu.main]]
-    identifier = "archives"
-    name = "历史存档"
-    pageRef = "/archives"
-    weight = 4
+    [languages.en.params]
+      description = "Tech events and blog of the HelloLLVM community"
+      tagline = "Compilers · LLVM · MLIR · Open Source"
+      homeIntro = "HelloLLVM is an open-source community for compiler developers and enthusiasts. We host meetups, tech talks and workshops — online and offline — around LLVM, MLIR, GCC, RISC-V and beyond."
+      aboutText = "The HelloLLVM community was founded in May 2018 by LLVM developers from the original HelloGCC community. Since 2019 it has merged with the OSDT community (formerly HelloGCC), jointly running HelloGCC.org and HelloLLVM.org. Dr. Ji Qiu has been serving as the community chair since February 2023."
+      joinText = "Join our offline meetups, subscribe to the mailing list, or follow us on GitHub. Whether you are a compiler veteran or just getting started — you are welcome."
+    [[languages.en.menu.main]]
+      identifier = "home"
+      name = "Home"
+      url = "/"
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      name = "Blog"
+      pageRef = "/posts"
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = "meetups"
+      name = "Meetups"
+      pageRef = "/meetups"
+      weight = 3
+    [[languages.en.menu.main]]
+      identifier = "archives"
+      name = "Archives"
+      pageRef = "/archives"
+      weight = 4

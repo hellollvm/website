@@ -3,6 +3,13 @@ title: "HelloLLVM 社区 3 月技术交流会通知"
 date: 2025-03-16
 slug: "2025-03-16-hellollvm-march-tech-talk"
 tags: ["meetup", "training"]
+summary: "3 月 22 日天津 + 线上，主题：开展编译器性能分析和优化需要做哪些准备。"
+city: "天津 + 线上"
+format: "培训（线下 + 腾讯会议）"
+time_label: "2025-03-22"
+links:
+  - name: "活动详情"
+    url: "https://mp.weixin.qq.com/s/F8S98x00HJdF7eKYqEckwg"
 ---
 
 HelloLLVM社区是由多位编译器从业者共同发起的编译技术社区，面向个人开发者及爱好者，话题围绕LLVM编译框架、MLIR、编译技术理论、开源社区八卦吐槽等展开。自2018年创立以来，举办过多场线下交流活动。自2023年2月开始，邱吉博士担任HelloLLVM社区负责人，负责社区的日常活动组织。
