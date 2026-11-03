@@ -1,0 +1,25 @@
+{{ $kind := .Section }}
+{{ $cardClass := "kind-post" }}
+{{ if eq $kind "meetups" }}{{ $cardClass = "kind-meetup" }}{{ else if eq $kind "announcements" }}{{ $cardClass = "kind-news" }}{{ end }}
+<article class="activity-card {{ $cardClass }}">
+  <div class="activity-top">
+    {{ partial "chip.html" . }}
+    <span class="date-badge" aria-hidden="true">
+      <span class="d">{{ .Date.Format "02" }}</span>
+      <span class="m">{{ .Date.Format "2006.01" }}</span>
+    </span>
+    <span class="sr-only">{{ i18n "published" }} {{ .Date.Format "2006-01-02" }}</span>
+  </div>
+  <h3 class="activity-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <div class="activity-meta">
+    {{ with .Params.city }}<span class="mi">📍 {{ . }}</span>{{ end }}
+    {{ with .Params.format }}<span class="mi">🎯 {{ . }}</span>{{ end }}
+  </div>
+  <p class="activity-summary">{{ .Summary | plainify | truncate 150 }}</p>
+  <div class="activity-links">
+    <a href="{{ .RelPermalink }}">{{ i18n "view_details" }} →</a>
+    {{ range .Params.links }}
+      <a href="{{ .url }}" rel="noopener">{{ .name }} ↗</a>
+    {{ end }}
+  </div>
+</article>

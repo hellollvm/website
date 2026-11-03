@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ "/" | relLangURL }}">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span>{{ i18n "site_title" }}</span>
+      <span class="brand-tag">{{ .Site.Params.tagline }}</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      {{ $current := . }}
+      {{ range .Site.Menus.main }}
+        {{ $target := .URL }}
+        {{ with .Page }}{{ $target = .RelPermalink }}{{ end }}
+        {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (eq $target $current.RelPermalink) }}
+        <a href="{{ $target }}" {{ if $active }}class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <div class="header-tools">
+      {{ with .Translations }}
+        {{ range . }}
+          <a class="tool-btn" href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" title="{{ i18n "lang_switch_label" }}">
+            <span class="icon" aria-hidden="true">🌐</span>{{ i18n "lang_switch_name" }}
+          </a>
+        {{ end }}
+      {{ else }}
+        {{ range .Site.Home.AllTranslations }}
+          {{ if ne .Language $.Site.Language }}
+            <a class="tool-btn" href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" title="{{ i18n "lang_switch_label" }}">
+              <span class="icon" aria-hidden="true">🌐</span>{{ i18n "lang_switch_name" }}
+            </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      <button class="tool-btn" id="theme-toggle" type="button" aria-label="{{ i18n "theme_toggle" }}">
+        <span class="icon ico-sun" aria-hidden="true">☀️</span>
+        <span class="icon ico-moon" aria-hidden="true" hidden>🌙</span>
+      </button>
+    </div>
+  </div>
+</header>

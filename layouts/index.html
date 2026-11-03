@@ -1,0 +1,119 @@
+{{ define "main" }}
+  {{/* ---------- Hero ---------- */}}
+  <section class="hero">
+    <div class="hero-blob b1" aria-hidden="true"></div>
+    <div class="hero-blob b2" aria-hidden="true"></div>
+    <div class="hero-blob b3" aria-hidden="true"></div>
+    <span class="hero-kicker">✨ {{ i18n "hero_kicker" }}</span>
+    <h1>{{ i18n "hero_title_a" }}<span class="grad-text">{{ i18n "hero_title_b" }}</span></h1>
+    <p class="hero-lead">{{ .Site.Params.homeIntro }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#activities">{{ i18n "hero_cta_activities" }} <span aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="{{ "posts/" | relLangURL }}">{{ i18n "hero_cta_blog" }}</a>
+    </div>
+  </section>
+
+  {{/* ---------- Recent activities ---------- */}}
+  {{ $events := where .Site.RegularPages "Section" "in" (slice "meetups" "posts" "announcements") }}
+  {{ $events = sort $events "Date" "desc" }}
+  <section class="section" id="activities">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title"><span class="dot" aria-hidden="true"></span>{{ i18n "recent_activities" }}</h2>
+        <p class="section-sub">{{ i18n "recent_activities_sub" }}</p>
+      </div>
+      <a class="link-more" href="{{ "meetups/" | relLangURL }}">{{ i18n "all_meetups" }} →</a>
+    </div>
+
+    {{ with index $events 0 }}
+      <article class="activity-featured">
+        <div>
+          <div class="activity-top">
+            {{ partial "chip.html" . }}
+            <span class="date-badge" aria-hidden="true">
+              <span class="d">{{ .Date.Format "02" }}</span>
+              <span class="m">{{ .Date.Format "2006.01" }}</span>
+            </span>
+            <span class="sr-only">{{ i18n "published" }} {{ .Date.Format "2006-01-02" }}</span>
+          </div>
+          <h3 class="activity-title" style="margin-top:.75rem"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="activity-summary">{{ .Summary | plainify | truncate 220 }}</p>
+          <div class="activity-links">
+            <a href="{{ .RelPermalink }}">{{ i18n "view_details" }} →</a>
+            {{ range .Params.links }}
+              <a href="{{ .url }}" rel="noopener">{{ .name }} ↗</a>
+            {{ end }}
+          </div>
+        </div>
+        <div class="feature-side">
+          <ul class="feature-facts">
+            <li><span class="k">{{ i18n "meta_date" }}</span><span>{{ with .Params.time_label }}{{ . }}{{ else }}{{ .Date.Format "2006-01-02" }}{{ end }}</span></li>
+            {{ with .Params.city }}<li><span class="k">{{ i18n "meta_city" }}</span><span>{{ . }}</span></li>{{ end }}
+            {{ with .Params.format }}<li><span class="k">{{ i18n "meta_format" }}</span><span>{{ . }}</span></li>{{ end }}
+            {{ with .Params.venue }}<li><span class="k">{{ i18n "meta_venue" }}</span><span>{{ . }}</span></li>{{ end }}
+          </ul>
+          {{ with .Params.tags }}
+            <div class="activity-links">
+              {{ range . }}<span class="tag">#{{ . }}</span>{{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </article>
+    {{ end }}
+
+    <div class="activity-grid">
+      {{ range after 1 $events | first 6 }}
+        {{ partial "activity-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  {{/* ---------- Latest posts (excluding items already shown above) ---------- */}}
+  {{ $shown := slice (index $events 0).Path }}
+  {{ range after 1 $events | first 6 }}{{ $shown = $shown | append .Path }}{{ end }}
+  {{ $posts := where (where .Site.RegularPages "Section" "posts") "Path" "not in" $shown }}
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title alt"><span class="dot" aria-hidden="true"></span>{{ i18n "latest_posts" }}</h2>
+        <p class="section-sub">{{ i18n "latest_posts_sub" }}</p>
+      </div>
+      <a class="link-more" href="{{ "posts/" | relLangURL }}">{{ i18n "all_posts" }} →</a>
+    </div>
+    <div class="activity-grid">
+      {{ range first 3 (sort $posts "Date" "desc") }}
+        {{ partial "activity-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  {{/* ---------- About / Join / Stats ---------- */}}
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title"><span class="dot" aria-hidden="true"></span>{{ i18n "about_title" }}</h2>
+      </div>
+    </div>
+    <div class="info-grid">
+      <div class="info-card coral">
+        <h3>🤝 {{ i18n "about_title" }}</h3>
+        <p>{{ .Site.Params.aboutText }}</p>
+      </div>
+      <div class="info-card violet">
+        <h3>🚀 {{ i18n "join_title" }}</h3>
+        <p>{{ .Site.Params.joinText }}</p>
+        <ul class="link-list">
+          <li><a href="https://github.com/hellollvm" rel="noopener"><span class="ico" aria-hidden="true">🐙</span>GitHub</a></li>
+          <li><a href="mailto:hellollvm@freelists.org"><span class="ico" aria-hidden="true">✉️</span>hellollvm@freelists.org</a></li>
+          <li><a href="https://hellogcc.org" rel="noopener"><span class="ico" aria-hidden="true">🌐</span>HelloGCC.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span class="num">2018</span><span class="lbl">{{ i18n "stat_since" }}</span></div>
+      <div class="stat"><span class="num">10+</span><span class="lbl">{{ i18n "stat_cities" }}</span></div>
+      <div class="stat"><span class="num">60+</span><span class="lbl">{{ i18n "stat_talks" }}</span></div>
+      <div class="stat"><span class="num">3</span><span class="lbl">{{ i18n "stat_community" }}</span></div>
+    </div>
+  </section>
+{{ end }}

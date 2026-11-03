@@ -1,0 +1,43 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <a class="brand" href="{{ "/" | relLangURL }}">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span>{{ i18n "site_title" }}</span>
+        </a>
+        <p>{{ .Site.Params.tagline }} — {{ .Site.Params.description }}</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>{{ i18n "nav_home" }}</h4>
+          <ul>
+            {{ range .Site.Menus.main }}
+              <li><a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>{{ i18n "subscribe_label" }}</h4>
+          <ul>
+            <li><a href="https://github.com/hellollvm" rel="noopener">GitHub</a></li>
+            <li><a href="https://hellogcc.org" rel="noopener">HelloGCC.org</a></li>
+            <li><a href="https://cnrv.io" rel="noopener">CNRV.io</a></li>
+            <li><a href="mailto:hellollvm@freelists.org">hellollvm@freelists.org</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>{{ i18n "contact_label" }}</h4>
+          <ul>
+            <li><a href="mailto:qiuji.odyssey@gmail.com">qiuji.odyssey@gmail.com</a></li>
+            <li><a href="https://github.com/hellollvm/website" rel="noopener">{{ if eq .Site.Language.Lang "zh" }}改进本站{{ else }}Improve this site{{ end }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ now.Year }} HelloLLVM · {{ i18n "footer_rights" }}</span>
+      <span>{{ i18n "footer_note" }}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+{{ $kind := .Section }}
+{{ $chipClass := "chip-post" }}
+{{ $chipLabel := i18n "label_post" }}
+{{ if not $kind }}
+  {{ $chipClass = "chip-arch" }}
+  {{ $chipLabel = i18n "label_archives" }}
+{{ else if eq $kind "meetups" }}
+  {{ $chipClass = "chip-meetup" }}
+  {{ $chipLabel = i18n "label_meetup" }}
+{{ else if eq $kind "announcements" }}
+  {{ $chipClass = "chip-news" }}
+  {{ $chipLabel = i18n "label_announcement" }}
+{{ end }}
+<span class="chip {{ $chipClass }}">{{ $chipLabel }}</span>

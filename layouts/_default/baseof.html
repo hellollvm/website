@@ -1,29 +1,64 @@
 <!DOCTYPE html>
-<html lang="{{ or .Lang .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.LanguageCode }}" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} · {{ .Site.Params.tagline }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{ range .Translations }}
+      <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" />
+    {{ end }}
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff6b57'/%3E%3Cstop offset='0.5' stop-color='%23ffb02e'/%3E%3Cstop offset='1' stop-color='%237c5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Arial, sans-serif' font-size='34' font-weight='bold' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:locale" content="{{ .Site.Language.LanguageCode }}" />
     {{ with resources.Get "css/main.css" }}
       <link rel="stylesheet" href="{{ .RelPermalink }}" />
     {{ end }}
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("hellollvm-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
-    <header class="header">
-      <div class="wrap">
-        <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
-        <p class="tagline">{{ .Site.Params.tagline }}</p>
-        <nav aria-label="Main navigation">
-          {{ range .Site.Menus.main }}
-            <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a>
-          {{ end }}
-        </nav>
-      </div>
-    </header>
+    {{ partial "header.html" . }}
     <main class="wrap">
       {{ block "main" . }}{{ end }}
     </main>
-    <footer class="footer wrap">© {{ now.Year }} HelloLLVM</footer>
+    {{ partial "footer.html" . }}
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        var sun = btn.querySelector(".ico-sun");
+        var moon = btn.querySelector(".ico-moon");
+        function sync() {
+          var explicit = root.getAttribute("data-theme");
+          var dark = explicit ? explicit === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (sun) sun.hidden = dark;
+          if (moon) moon.hidden = !dark;
+        }
+        btn.addEventListener("click", function () {
+          var explicit = root.getAttribute("data-theme");
+          var dark = explicit ? explicit === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var next = dark ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("hellollvm-theme", next); } catch (e) {}
+          sync();
+        });
+        sync();
+      })();
+    </script>
   </body>
 </html>

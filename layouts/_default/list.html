@@ -1,14 +1,31 @@
 {{ define "main" }}
-  <section>
+  <section class="page-head">
+    {{ partial "chip.html" . }}
     <h1>{{ .Title }}</h1>
-    {{ with .Content }}<div class="intro">{{ . }}</div>{{ end }}
-    <div class="cards">
+    {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+  </section>
+
+  <section class="section">
+    <div class="post-list">
       {{ range .Pages.ByDate.Reverse }}
-        <article class="card">
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p class="meta">{{ .Date.Format "2006-01-02" }}</p>
-          <p>{{ .Summary }}</p>
-          <a class="more" href="{{ .RelPermalink }}">阅读全文<span class="sr-only">：{{ .Title }}</span><span aria-hidden="true"> →</span></a>
+        <article class="post-card">
+          <span class="date-badge" aria-hidden="true">
+            <span class="d">{{ .Date.Format "02" }}</span>
+            <span class="m">{{ .Date.Format "2006.01" }}</span>
+          </span>
+          <div class="post-card-body">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <div class="activity-meta">
+              <span class="mi">🗓 {{ .Date.Format "2006-01-02" }}</span>
+              {{ with .Params.city }}<span class="mi">📍 {{ . }}</span>{{ end }}
+              {{ with .Params.format }}<span class="mi">🎯 {{ . }}</span>{{ end }}
+            </div>
+            <p class="activity-summary">{{ .Summary | plainify | truncate 160 }}</p>
+            <div class="post-card-foot">
+              {{ range .Params.tags }}<span class="tag">#{{ . }}</span>{{ end }}
+              <a class="link-more" href="{{ .RelPermalink }}">{{ i18n "read_more" }} →</a>
+            </div>
+          </div>
         </article>
       {{ end }}
     </div>

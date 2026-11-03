@@ -1,7 +1,54 @@
 {{ define "main" }}
-  <article class="post">
-    <h1>{{ .Title }}</h1>
-    <p class="meta">{{ .Date.Format "2006-01-02" }}</p>
+  <article class="article">
+    <header class="article-head">
+      <div class="activity-top">
+        {{ partial "chip.html" . }}
+      </div>
+      <h1>{{ .Title }}</h1>
+      <div class="article-meta">
+        {{ if not .Date.IsZero }}
+          <span>🗓 {{ .Date.Format "2006-01-02" }}</span>
+          <span class="dotsep" aria-hidden="true"></span>
+        {{ end }}
+        <span>☕ {{ .ReadingTime }} {{ i18n "minutes_read" }}</span>
+        {{ with .Params.city }}
+          <span class="dotsep" aria-hidden="true"></span>
+          <span>📍 {{ . }}</span>
+        {{ end }}
+        {{ with .Params.format }}
+          <span class="dotsep" aria-hidden="true"></span>
+          <span>🎯 {{ . }}</span>
+        {{ end }}
+      </div>
+      {{ with .Params.tags }}
+        <div class="article-tags">
+          {{ range . }}<span class="tag">#{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+    </header>
+
     <div class="post-content">{{ .Content }}</div>
+
+    {{ with .Params.links }}
+      <h3>{{ i18n "meta_links" }}</h3>
+      <ul class="link-list">
+        {{ range . }}
+          <li><a href="{{ .url }}" rel="noopener"><span class="ico" aria-hidden="true">🔗</span>{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
+    <hr />
+    <div class="activity-links">
+      <a href="{{ "/" | relLangURL }}">← {{ i18n "back_home" }}</a>
+      {{ if .Section }}
+        <a href="{{ printf "%s/" .Section | relLangURL }}">← {{ i18n "back_section" }}</a>
+      {{ end }}
+      {{ with .Translations }}
+        {{ range . }}
+          <a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}">🌐 {{ .Language.LanguageName }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
   </article>
 {{ end }}
